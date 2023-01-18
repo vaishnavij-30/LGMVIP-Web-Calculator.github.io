@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap_files/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap_files/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap_files/jquery.min.js"></script>
+	<style type="text/css">
+		
+		body {
+			min-height: 100vh;
+			background: #efeff2;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+        .calculator {
+        	width: 400px;
+        	height: 470px;
+            margin-right: 200px;
+            border: 3px solid skyblue;
+            border-radius: 5px;
+            padding: 10px;
+
+
+        }
+        #calc {
+            width: 100%;
+            margin: auto;
+        	height: 90px;
+        	border: none;
+        	border-radius: 12px;
+        	font-size: 2rem;
+        	padding: 2rem;
+        	color: #000;
+        	text-align: right;
+        	pointer-events: none;
+        }
+        .btn {
+        	width: 19%;
+        	height: 50px;
+            margin-top: 10px;
+            margin-left: 15px;
+        	border: none;
+        	border-radius: 12px;
+        	font-size: 2rem;
+        	padding: 2rem;
+        	color: #000;
+
+        }
+        .btn-success{
+        	width: 43%;
+        }
+	</style>
+	<script type="text/javascript">
+		function sqrt() {
+            calc.value = Math.sqrt(calc.value);
+        }
+
+	    function fact() {
+	        var i, num, f;
+	        f = 1
+	        num = calc.value;
+	        for (i = 1; i <= num; i++) {
+	            f = f * i;
+	        }
+
+	        i = i - 1;
+
+	        calc.value = f;
+        }
+	</script>
+
+</head>
+<body style="background-image: url('cal_back_img.jpg');">
+	<div class="calculator">
+		<form name="form1">
+			<input id="calc" type="text" name="answer">  
+
+			<input type="button" class="btn btn-warning" value="C" onclick="answer.value = ' ' " id="clear">
+			<input type="button" class="btn btn-danger" value="del" onclick="answer.value = answer.value.toString().slice(0,-1) ">
+			<input type="button" class="btn btn-gray" value="&radic;" onclick="sqrt()">
+			<input type="button" class="btn btn-dark" value="/" onclick="answer.value += '/' ">
+
+			<input type="button" class="btn btn-info" value="7" onclick="answer.value += '7' ">
+			<input type="button" class="btn btn-info" value="8" onclick="answer.value += '8' ">
+			<input type="button" class="btn btn-info" value="9" onclick="answer.value += '9' ">
+			<input type="button" class="btn btn-dark" value="&times;" onclick="answer.value += '*' ">
+
+			<input type="button" class="btn btn-info" value="4" onclick="answer.value += '4' ">
+			<input type="button" class="btn btn-info" value="5" onclick="answer.value += '5' ">
+			<input type="button" class="btn btn-info" value="6" onclick="answer.value += '6' ">
+			<input type="button" class="btn btn-dark" value="-" onclick="answer.value += '-' ">
+
+			<input type="button" class="btn btn-info" value="1" onclick="answer.value += '1' ">
+			<input type="button" class="btn btn-info" value="2" onclick="answer.value += '2' ">
+			<input type="button" class="btn btn-info" value="3" onclick="answer.value += '3' ">
+			<input type="button" class="btn btn-dark" value="+" onclick="answer.value += '+' ">
+			
+			
+			<input type="button" class="btn btn-dark" value="x!" onclick="fact()">
+			<input type="button" class="btn btn-info" value="0" onclick="answer.value += '0' ">
+			<input type = "button" class="btn btn-dark" value = "." onclick = "form1.answer.value += '.' ">
+			<input type="button" class="btn btn-dark" value="%" onclick="answer.value += '%' ">
+
+			<input type="button" class="btn btn-dark" value="(" onclick="answer.value += '(' ">
+			<input type="button" class="btn btn-dark" value=")" onclick="answer.value += ')' ">
+			<input type="button" class="btn btn-success" value="=" onclick="answer.value = eval(answer.value) ">
+
+			
+		</form>
+	</div>
+<script src="form.js"></script>
+</body>
+</html>
